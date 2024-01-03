@@ -10,6 +10,11 @@ namespace CarRentalManagement.Client.Static
         private static readonly string Prefix = "api";
 
         public static readonly string MakesEndPoint = $"{Prefix}/makes";
+        public static readonly string ModelsEndPoint = $"{Prefix}/models";
+        public static readonly string ColoursEndPoint = $"{Prefix}/colours";
+        public static readonly string VehiclesEndPoint = $"{Prefix}/vehicles";
+        public static readonly string CustomersEndPoint = $"{Prefix}/customers";
+        public static readonly string BookingsEndPoint = $"{Prefix}/bookings";
 
     }
 }

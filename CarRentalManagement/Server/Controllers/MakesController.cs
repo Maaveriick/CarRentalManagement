@@ -157,6 +157,7 @@ namespace CarRentalManagement.Server.Controllers
         {
             await _unitOfWork.Makes.Insert(make);
             await _unitOfWork.Save(HttpContext);
+
             return CreatedAtAction("GetMake", new { id = make.Id }, make);
         }
 
@@ -184,7 +185,7 @@ namespace CarRentalManagement.Server.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMake(int id)
         {
-            var make = _unitOfWork.Makes.Get(q => q.Id == id);
+            var make = await _unitOfWork.Makes.Get(q => q.Id == id);
             if (make == null)
             {
                 return NotFound();
